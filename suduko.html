@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sudoku Solver</title>
+    <link rel="icon" href="sudoku.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku Solver</h1>
+        <div class="input-container">
+            <label for="numbers">Number of Given Digits:</label>
+            <input type="number" id="numbers" min="17" max="81" style="border-radius: 15px;
+            background-color: rgba(240, 248, 255, 0.416);">
+        </div>
+        <div class="sudoku-container"></div>
+        <button class="solve-btn">Solve</button>
+        <button class="reset-btn">Reset</button>
+    </div>
+    <div class="loader"></div>
+    <script src="script.js"></script>
+</body>
+</html>
