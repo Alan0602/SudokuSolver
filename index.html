@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,5 +22,100 @@
     </div>
     <div class="loader"></div>
     <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beautiful skeuomorphic Sudoku Solver">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="page-bg">
+    <div class="grain"></div>
+  </div>
+
+  <main class="app">
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <div class="header-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="1" y="1" width="8" height="8" rx="2" fill="currentColor" opacity="0.9"/>
+          <rect x="11" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.5"/>
+          <rect x="19" y="1" width="8" height="8" rx="2" fill="currentColor" opacity="0.9"/>
+          <rect x="1" y="11" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.5"/>
+          <rect x="11" y="11" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.9"/>
+          <rect x="19" y="11" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.5"/>
+          <rect x="1" y="19" width="8" height="8" rx="2" fill="currentColor" opacity="0.9"/>
+          <rect x="11" y="19" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.5"/>
+          <rect x="19" y="19" width="8" height="8" rx="2" fill="currentColor" opacity="0.9"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="title">Sudoku Solver</h1>
+        <p class="subtitle">Enter your puzzle — we'll crack it instantly</p>
+      </div>
+    </header>
+
+    <!-- ── CARD ── -->
+    <div class="card">
+
+      <!-- controls row -->
+      <div class="controls-row">
+        <div class="field-group">
+          <label class="field-label" for="numbers">Given Digits</label>
+          <div class="number-input-wrap">
+            <input type="number" id="numbers" class="number-input" min="17" max="81" placeholder="17–81">
+            <span class="field-hint">min 17</span>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-secondary" id="resetBtn">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 1 1.2 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M2 12V8h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Reset
+          </button>
+          <button class="btn btn-primary" id="solveBtn">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Solve
+          </button>
+        </div>
+      </div>
+
+      <!-- status bar -->
+      <div class="status-bar" id="statusBar">
+        <span class="status-dot idle" id="statusDot"></span>
+        <span class="status-text" id="statusText">Ready — enter your puzzle below</span>
+        <div class="loader" id="loader">
+          <div class="loader-ring"></div>
+        </div>
+      </div>
+
+      <!-- sudoku board -->
+      <div class="board-wrap">
+        <div class="board-shadow"></div>
+        <div class="sudoku-board" id="sudokuBoard"></div>
+      </div>
+
+      <!-- legend -->
+      <div class="legend">
+        <span class="legend-dot given"></span><span>Given</span>
+        <span class="legend-dot solved"></span><span>Solved</span>
+        <span class="legend-dot conflict"></span><span>Conflict</span>
+      </div>
+
+    </div>
+
+    <footer class="footer">Backtracking algorithm · O(9^m) complexity</footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
